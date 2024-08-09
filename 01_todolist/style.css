@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+@import url("https://webfontworld.github.io/SCoreDream/SCoreDream.css");
+
+html, body, main, div, h1, p, ul, li, input, button, span, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 10px; }
+
+body {
+    color: #323232;
+    font: 400 1.4rem "SCoreDream";
+}
+
+button {
+    color: #323232;
+    font: 400 1.4rem "SCoreDream";
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+main {
+    max-width: 128rem;
+    margin: 0 auto;
+    padding: 2.4rem 4rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input_wrap {
+    overflow: hidden;
+    display: flex;
+    gap: 1.6rem;
+    margin: 3.6rem 0 2.4rem;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+}
+
+.input_wrap input {
+    flex: 1 0 auto;
+    color: #323232;
+    font: 400 1.4rem "SCoreDream";
+    border: 0;
+}
+
+.input_wrap input:focus {
+    outline: 0;
+}
+
+.input_wrap input::placeholder { color: #989898; }
+
+.input_wrap button {
+    padding: 0.8rem 1.6rem;
+    background-color: #d7d7d7;
+    border-radius: 4px;
+}
+
+.list_wrap {
+    list-style: none;
+}
+
+.list_wrap li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.6rem;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.list_wrap li:hover {
+    background-color: #f1f1f1;
+}
+
+.list_wrap li .check_completed {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.list_wrap li .check_completed:checked {
+    background: url(img/icon.svg) no-repeat left -20% center/auto 50%;
+    border-color: #9db9ff;
+}
+
+.list_wrap li .check_completed:checked+p {
+    color: #989898;
+}
+
+.list_wrap li p {
+    flex: 1 0 auto;
+}
+
+.list_wrap li .btn_delete {
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url(img/icon.svg) no-repeat right center/auto 100%;
+}
+
+.no_list {
+    display: none;
+    padding: 1.6rem;
+    color: #989898;
+    text-align: center;
+}
