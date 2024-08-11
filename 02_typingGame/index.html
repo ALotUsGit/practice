@@ -18,24 +18,29 @@
                 <p class="lead">
                     주어진 단어를  <span class="text-success">5</span>초 안에 타이핑 하기
                 </p>
-
-                <button id="start" class="mt-4 px-4 btn btn-dark text-white fs-2">Start</button>
                 
-                <div id="gameArea" class="d-none mt-4">
+                <!-- 게임 영역 -->
+                <div id="gameArea" class="d-none mt-5">
                     <h2 id="currentWord">word</h2>
-                    <input type="text" id="wordInput" class="form-control form-control-lg mt-5" placeholder="Type the word" />
+                    <input type="text" id="wordInput" class="form-control form-control-lg mt-4" placeholder="Type the word" />
                     
-                    <h4 id="message" class="mt-3"></h4>
-    
-                    <div class="row">
+                    <div class="row mt-3">
                         <div class="col-12 col-xl-6">
-                            <h3>Time left: <span id="time">0</span></h3>
+                            <p class="fs-4">Time left: <span id="time">0</span></p>
                         </div>
                         <div class="col-12 col-xl-6">
-                            <h3>score: <span id="score">0</span></h3>
+                            <p class="fs-4">score: <span id="score">0</span></p>
                         </div>
                     </div>
+                </div> <!-- end 게임 영역 -->
+
+                <!-- Game Over -->
+                <div id="gamOver" class="d-none mt-5">
+                    <h2 class="text-danger">GAME OVER!</h2>
+                    <p class="fs-4">final score : <strong id="finalScore">0</strong></p>
                 </div>
+                
+                <button id="start" class="mt-4 px-4 btn btn-dark text-white fs-2">Start</button>
             </div>
         </section>
 
@@ -43,7 +48,10 @@
             <div class="col">
                 <div class="card card-body text-bg-secondary">
                     <h5>게임방법</h5>
-                    <p>Start 버튼을 누르면 게임이 시작됩니다. <br /> 게임이 시작되면 각 단어를 주어진 시간 안에 타이핑합니다.</p>
+                    <p>
+                        Start 버튼을 누르면 게임이 시작됩니다. <br /> 
+                        게임이 시작되면 각 단어를 주어진 시간 안에 타이핑합니다.
+                    </p>
                 </div>
             </div>
         </section>
