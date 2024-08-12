@@ -31,15 +31,19 @@ main {
     padding: 2.4rem;
 }
 
-h1 {
-    text-align: center;
-}
+h1 { text-align: center; }
 
 label {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     cursor: pointer;
+}
+
+input[type="text"] {
+    color: #323232;
+    font: 400 1.4rem "SCoreDream";
+    border: 0;
 }
 
 input[type="checkbox"] {
@@ -53,9 +57,11 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background: #fff url(img/icon.svg) no-repeat left -20% center/auto 50%;
+    background: #fff url(img/icon.svg) no-repeat left -8% center/auto 50%;
     border-color: #9db9ff;
 }
+
+input:focus { outline: 0; }
 
 /* 사용자 입력 영역 */
 .input_wrap {
@@ -68,13 +74,8 @@ input[type="checkbox"]:checked {
     border-radius: 4px;
 }
 
-.input_wrap input {
-    flex: 1 0 auto;
-    color: #323232;
-    font: 400 1.4rem "SCoreDream";
-    border: 0;
-}
-.input_wrap input:focus { outline: 0; }
+.input_wrap input { flex: 1 0 auto; }
+
 .input_wrap input::placeholder { color: #989898; }
 
 .input_wrap button {
@@ -104,21 +105,35 @@ input[type="checkbox"]:checked {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    min-height: 6.8rem;
     padding: 1.6rem;
     border-bottom: 1px solid #d7d7d7;
 }
 .list_wrap li:first-of-type { border-top: 1px solid #d7d7d7; }
 .list_wrap li:hover { background-color: #f4f4f4; }
 
-.list_wrap li label { flex: 1 0 auto; }
-.list_wrap li .check_completed:checked+span { color: #989898; }
+.list_wrap li label,
+.list_wrap li label span, 
+.list_wrap li label .edit_input { flex: 1 0 auto; }
+.list_wrap li input:checked+span { color: #989898; }
 
-
-.list_wrap li .btn_delete {
-    width: 1.6rem;
-    height: 1.6rem;
-    background: url(img/icon.svg) no-repeat right center/auto 100%;
+.list_wrap li .edit_input {
+    display: none;
+    padding: 0.8rem 0;
+    background-color: transparent;
 }
+
+.list_wrap li .btn_edit {
+    margin-left: auto;
+    color: #9DB9FF;
+}
+.list_wrap li .btn_cancle {
+    display: none;
+    color: #989898;
+}
+
+.list_wrap li .btn_delete { color: #FF4D68; }
+
 
 .no_list {
     display: none;

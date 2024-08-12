@@ -13,8 +13,11 @@ function insertList(list, checked = " ") {
                         <label>
                             <input type="checkbox" class="check_completed" onchange="checkValue(this)" ${checked} />
                             <span>${list}</span>
+                            <input type="text" class="edit_input" />
+                            <button class="btn_edit" onclick="editList(this)">수정</button>
+                            <button class="btn_cancle" onclick="editCancle(this)">취소</button>
                         </label>
-                        <button class="btn_delete" onclick="deleteList(this)"></button>
+                        <button class="btn_delete" onclick="deleteList(this)">삭제</button>
                     </li>`;
 
     listWrap.insertAdjacentHTML("beforeend", newList);
@@ -33,11 +36,7 @@ for (let i = 0; i < localStorage.length; i++) {
  * 할일 갯수 체크 함수
  */
 function listNumCheck() {
-    if (listWrap.childElementCount == 0) {
-        noList.style.display = "block";
-    } else {
-        noList.style.display = "none";
-    }
+    listWrap.childElementCount == 0 ? noList.style.display = "block" : noList.style.display = "none";
 }
 
 listNumCheck();
@@ -63,10 +62,51 @@ function addList() {
  */
 function deleteList(e) {
     e.parentNode.remove(); // 클릭한 요소의 부모인 li 삭제
-
-    const txt = e.previousElementSibling.textContent.trim();
-    localStorage.removeItem(txt); // 해당 요소 로컬 스토리지에서 삭제
+    
+    const txt = e.previousElementSibling.querySelector("span").textContent;
+    window.localStorage.removeItem(txt); // 해당 요소 로컬 스토리지에서 삭제
     listNumCheck(); // 리스트가 0개일 경우 .no_list 노출 위해 함수 호출
+}
+
+/** 수정 관련한 공통 요소 함수 */
+function editCm(e) {
+    e.parentNode.querySelector("span").style.display = "block";
+    e.parentNode.querySelector(".edit_input").style.display = "none";
+    e.parentNode.querySelector(".btn_edit").innerHTML = "수정";
+    e.parentNode.querySelector(".btn_cancle").style.display = "none";
+}
+
+/** 수정 버튼 함수 */
+function editList(e) {
+    const span = e.parentNode.querySelector("span");
+    const editInput = e.parentNode.querySelector(".edit_input");
+    const btnCancle = e.parentNode.querySelector(".btn_cancle");
+
+    if (e.textContent === "수정") { // 버튼의 텍스트가 "수정"인 경우
+        e.textContent = "완료";
+        span.style.display = "none";
+        editInput.value = span.innerHTML.trim();
+        editInput.style.display = "block";
+        btnCancle.style.display = "block";
+    } else { // 버튼의 텍스트가 "완료"인 경우
+        if (editInput.value.trim() === "") { // input이 비었을 경우 focus와 함께 return
+            editInput.focus();
+            return;
+        }
+
+        let originalVal = localStorage.getItem(span.textContent); // 기존의 value값(완료여부 상태) 저장
+        localStorage.removeItem(span.textContent); // 로컬 스토리지에서 기존 key-value 삭제
+
+        span.innerHTML = editInput.value.trim(); // 수정된 내용을 span에 반영
+        localStorage.setItem(editInput.value.trim(), originalVal); // 로컬 스토리지에 수정된 내용 추가
+
+        editCm(e);
+    }
+}
+
+/** 취소 버튼 함수 */
+function editCancle(e) {
+    editCm(e);
 }
 
 /**
@@ -89,8 +129,6 @@ inputUser.addEventListener("keypress", e => {
 
 // 전체 삭제 버튼
 document.querySelector("#btnAllDelete").addEventListener("click", e => {
-    const checkCompleted = document.querySelectorAll(".check_completed");
-    
     listWrap.innerHTML = ""; // 리스트 HTML 전체 삭제
     localStorage.clear(); // 로컬 스토리지 전체 삭제
     listNumCheck();
