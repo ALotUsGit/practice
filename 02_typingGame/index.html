@@ -12,15 +12,19 @@
         <h1>Typing Master</h1>
     </header>
 
-    <main class="container text-center">
+    <main class="container mt-2 text-center">
+        <section class="row mb-5">
+            <div class="col-8 col-xl-4 mx-auto btn-group">
+                <button class="col-12 col-sm-3 btn btn-outline-dark active">Lv.1</button>
+                <button class="col-12 col-sm-3 btn btn-outline-dark">Lv.2</button>
+                <button class="col-12 col-sm-3 btn btn-outline-dark">Lv.3</button>
+            </div>
+        </section>
+
         <section class="row">
             <div class="col mx-auto">
-                <p class="lead">
-                    주어진 단어를  <span class="text-success">5</span>초 안에 타이핑 하기
-                </p>
-                
                 <!-- 게임 영역 -->
-                <div id="gameArea" class="d-none mt-5">
+                <div id="gameArea" class="d-none">
                     <h2 id="currentWord">word</h2>
                     <input type="text" id="wordInput" class="form-control form-control-lg mt-4" placeholder="Type the word" />
                     
@@ -35,12 +39,13 @@
                 </div> <!-- end 게임 영역 -->
 
                 <!-- Game Over -->
-                <div id="gamOver" class="d-none mt-5">
+                <div id="gamOver" class="d-none">
                     <h2 class="text-danger">GAME OVER!</h2>
                     <p class="fs-4">final score : <strong id="finalScore">0</strong></p>
+                    <button id="reStart" class="mt-4 px-4 btn btn-dark text-white fs-2">Restart</button>
                 </div>
                 
-                <button id="start" class="mt-4 px-4 btn btn-dark text-white fs-2">Start</button>
+                <button id="start" class="px-4 btn btn-dark text-white fs-2">Start</button>
             </div>
         </section>
 
@@ -53,14 +58,6 @@
                         게임이 시작되면 각 단어를 주어진 시간 안에 타이핑합니다.
                     </p>
                 </div>
-            </div>
-        </section>
-
-        <section class="row mt-5">
-            <div class="col-md-12">
-                <button class="col-12 col-sm-3 btn btn-primary">초급</button>
-                <button class="col-12 col-sm-3 btn btn-secondary">중급</button>
-                <button class="col-12 col-sm-3 btn btn-success">고급</button>
             </div>
         </section>
     </main>
