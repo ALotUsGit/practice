@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+@import url("https://webfontworld.github.io/SCoreDream/SCoreDream.css");
+
+html, body, main, footer, div, h1, p, ul, li, label, input, button, span, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { font-size: 10px; }
+
+body {
+    color: #323232;
+    font: 400 1.4rem "SCoreDream";
+    line-height: 1;
+}
+
+main {
+    padding: 3.6rem;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+    padding: 2.4rem 0;
+    text-align: center;
+}
+
+.top h1 {}
+
+.top button {
+    place-self: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: transparent;
+    border: 0;
+    border-left: 4px solid #9db9ff;
+    border-bottom: 4px solid #9db9ff;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.top .btn_prev {}
+
+.top .btn_next { transform: rotate(-135deg); }
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 2.4rem 0;
+    text-align: center;
+}
+
+.date_wrap {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.date_wrap .date {
+    height: 8rem;
+    padding: 1.2rem;
+}
+
+.days p:first-of-type,
+.date_wrap [class^="date"]:nth-of-type(7n + 1) { color: #FF4D68; }
+
+.date_last { opacity: 0.5; }
