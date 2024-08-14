@@ -3,5 +3,8 @@
 [Javascript]
   1. Todo List ([https://alotusgit.github.io/practice/01_todolist/](https://alotusgit.github.io/practice/01_todolist/))  
     · localStorage  
-    · clickEvent  
+    · clickEvent
     · insertAdjacentHTML  
+
+  3. 타이핑게임 ([https://alotusgit.github.io/practice/02_typingGame/](https://alotusgit.github.io/practice/02_typingGame/))  
+    · 영단어 랜덤 호출 API 
