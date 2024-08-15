@@ -16,19 +16,15 @@ body {
     line-height: 1;
 }
 
-main {
-    padding: 3.6rem;
-}
+main { padding: 3.6rem; }
 
 .top {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     align-items: center;
-    padding: 2.4rem 0;
+    margin-bottom: 3.2rem;
     text-align: center;
 }
-
-.top h1 {}
 
 .top button {
     place-self: center;
@@ -42,15 +38,15 @@ main {
     cursor: pointer;
 }
 
-.top .btn_prev {}
-
 .top .btn_next { transform: rotate(-135deg); }
 
 .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    padding: 2.4rem 0;
+    margin-bottom: 1.6rem;
+    padding: 1.6rem 0;
     text-align: center;
+    border-radius: 4px;
 }
 
 .date_wrap {
@@ -62,8 +58,10 @@ main {
     height: 8rem;
     padding: 1.2rem;
 }
+.date_wrap .date.active { background-color: #e9efff; }
+.date_wrap .date.active:nth-of-type(7n + 1) { background-color: #ffe7eb; }
 
 .days p:first-of-type,
-.date_wrap [class^="date"]:nth-of-type(7n + 1) { color: #FF4D68; }
+.date_wrap .date:nth-of-type(7n + 1) { color: #FF4D68; }
 
 .date_last { opacity: 0.5; }

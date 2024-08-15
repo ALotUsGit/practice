@@ -3,30 +3,49 @@ const month = document.querySelector("#month");
 const days = document.querySelectorAll(".days p");
 const dateWrap = document.querySelector(".date_wrap");
 
-let currentDate = new Date();
-let yearTxt = currentDate.getFullYear();
-let monthTxt = currentDate.getMonth();
+const monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-let firstDate = new Date(yearTxt, monthTxt, 1);
-let lastDate = new Date(yearTxt, monthTxt + 1, 0);
+let today = new Date();
+let firstDate;
+let lastDate;
 
-/** 텍스트 입력 */
-year.innerHTML = yearTxt;
-month.innerHTML = (monthTxt + "").length === 1 ? "0" + (monthTxt + 1) : monthTxt + 1;
+(calendar = () => {
+    year.innerHTML = today.getFullYear();
+    let monthTxt = month.innerHTML = monthArr[today.getMonth()];
 
-let num = 0;
-let dayCount = firstDate.getDay();
+    firstDate = new Date(year.textContent, monthArr.indexOf(monthTxt), 1);
+    lastDate = new Date(year.textContent, monthArr.indexOf(monthTxt) + 1, 0);
 
-while (num < lastDate.getDate()) {
-    // let date = `<div class="date">${num}</div>`;
-    if (dayCount > 0) {
-        dayCount--;
-        dateWrap.insertAdjacentHTML("beforeend", `<div class="date_last">${new Date(yearTxt, monthTxt, 0).getDate() - dayCount}</div>`);
-    } else {
-        num++;
-        dateWrap.insertAdjacentHTML("beforeend", `<div class="date">${num}</div>`);
+    let num = 0;
+    let dayCount = firstDate.getDay();
+
+    dateWrap.innerHTML = "";
+    while (num < lastDate.getDate()) {
+        if (dayCount > 0) { // 날짜를 원하는 요일부터 노출 시키기 위한 if문
+            dayCount--;
+            dateWrap.insertAdjacentHTML("beforeend", `<div class="date_last"></div>`);
+        } else {
+            num++;
+            dateWrap.insertAdjacentHTML("beforeend", `<div class="date">${num}</div>`);
+        }
     }
-}
+})();
 
+document.querySelectorAll(".date").forEach((v, i) => {
+    if (i === today.getDate() - 1) v.classList.add("active");
+});
 
-console.log(firstDate.getDay(), lastDate.getDate());
+/** 이전 버튼 클릭 */
+document.querySelector(".btn_prev").addEventListener("click", e => {
+    // 현재 보이는 달의 마지막날 만큼 빼고 날짜를 업데이트 시킨다.
+    let newDate = lastDate.getDate() - lastDate.getDate();
+    today.setDate(newDate);
+    calendar();
+});
+
+/** 다음 버튼 클릭 */
+document.querySelector(".btn_next").addEventListener("click", e => {
+    let newDate = firstDate.getDate() + lastDate.getDate();
+    today.setDate(newDate);
+    calendar();
+});

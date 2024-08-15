@@ -6,5 +6,7 @@
     · clickEvent
     · insertAdjacentHTML  
 
-  3. 타이핑게임 ([https://alotusgit.github.io/practice/02_typingGame/](https://alotusgit.github.io/practice/02_typingGame/))  
+  2. 타이핑게임 ([https://alotusgit.github.io/practice/02_typingGame/](https://alotusgit.github.io/practice/02_typingGame/))  
     · 영단어 랜덤 호출 API 
+
+  3. 달력만들기 ([https://alotusgit.github.io/practice/03_calendar/](https://alotusgit.github.io/practice/03_calendar/))  
