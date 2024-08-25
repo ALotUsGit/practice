@@ -10,3 +10,5 @@
     · 영단어 랜덤 호출 API 
 
   3. 달력만들기 ([https://alotusgit.github.io/practice/03_calendar/](https://alotusgit.github.io/practice/03_calendar/))  
+  
+  4. 계산기만들기 ([https://alotusgit.github.io/practice/04_calculator/](https://alotusgit.github.io/practice/04_calculator/))
