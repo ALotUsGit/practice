@@ -1,18 +1,13 @@
-# tsx-tailwind-npm
+# Make a React Version of a TodoList
 
-[tsx-tailwind-npm]  
-1. npm create vite@latest .  
-    - choose React  
-    - choose Typescript + swc  
-2. npm install -D tailwindcss postcss autoprefixer  
-3. npx tailwindcss init -p
-4. tailwind.config.js에 추가  
-    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],  
-5. tailwind.css에 추가  
-    @tailwind base;  
-    @tailwind components;  
-    @tailwind utilities;  
-6. 실행 npm run dev
+###[학습목표]
 
-tailwind site - Download  
-https://tailwindcss.com/docs/guides/vite#react
+1. 수업시간에 배운 내용 복습 (useState, props 등)
+2. tailwind.css 활용한 디자인
+3. 재사용 가능한 form 컴포넌트 만들기
+
+### [사용 패키지]
+
+-   tailwind
+    -   tailwind-merge
+    -   icon: heroicons(https://github.com/tailwindlabs/heroicons)
