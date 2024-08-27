@@ -2,7 +2,7 @@ import { TTodo } from "../../types/TTodo";
 import Button from "../froms/Button";
 import CheckBox from "../froms/CheckBox";
 
-import deleteSvg from "./../../assets/delete.svg";
+import deleteSvg from "../../assets/delete.svg";
 
 const TodoListItem = ({
     list,
