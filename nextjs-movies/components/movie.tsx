@@ -17,7 +17,8 @@ export default function Movie({
 }: TMovieProps) {
   return (
     <li key={id}>
-      <Link href={`/${id}`}>
+      {/* prefetch - client가 누를 것을 대비해 데이터를 미리 다운받아 둔다. */}
+      <Link prefetch href={`/${id}`}>
         <div className="overflow-hidden rounded-md">
           <img
             src={poster_path}
