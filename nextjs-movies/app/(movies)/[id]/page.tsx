@@ -24,7 +24,7 @@ export default async function Movies({ params: { id } }: TMovieDetail) {
 
       <Suspense
         fallback={
-          <div className="w-2/4 h-48 mt-8 bg-gray-500 rounded md:w-1/4"></div>
+          <div className="w-2/4 h-48 mt-8 bg-gray-700 rounded md:w-1/4 animate-pulse"></div>
         }
       >
         <MovieVideos id={id} />
