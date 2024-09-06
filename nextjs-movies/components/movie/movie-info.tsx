@@ -1,13 +1,7 @@
-import { API_URL } from "../app/constants";
-
-export async function getMovie(id: string) {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  const response = await fetch(`${API_URL}/${id}`);
-  return response.json();
-}
+import { getDetail } from "../../app/(movies)/[id]/layout";
 
 export default async function MovieInfo({ id }: { id: string }) {
-  const movie = await getMovie(id);
+  const movie = await getDetail(id);
   return (
     <section className="flex flex-col gap-8 max-w-screen-lg mx-auto sm:flex-row">
       <img

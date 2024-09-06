@@ -1,4 +1,4 @@
-import Movie from "../../components/movie";
+import Movie from "../../components/movie/movie";
 import { API_URL } from "../constants";
 
 export const metadata = {

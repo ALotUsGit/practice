@@ -1,5 +1,6 @@
 import "./global.css";
 import Navigation from "../components/navigation";
+import Link from "next/link";
 
 export const metadata = {
   title: {
@@ -17,10 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="overflow-x-hidden flex flex-col max-w-full min-h-screen text-white bg-gray-950">
-        <h1 className="py-4 text-gray-400 text-2xl font-bold text-center">
+        <Link
+          href="/"
+          className="py-4 text-gray-400 text-2xl font-bold text-center"
+        >
           A_LOTUS^MOVIE
-        </h1>
-        <Navigation />
+        </Link>
+        {/* <Navigation /> */}
 
         <main className="flex-auto py-4 px-6 xl:px-12">{children}</main>
 

@@ -1,13 +1,9 @@
-import { API_URL } from "../app/constants";
-
-async function getVideos(id: string) {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  const response = await fetch(`${API_URL}/${id}/videos`);
-  return response.json();
-}
+import { API_URL } from "../../app/constants";
 
 export default async function MovieVideos({ id }: { id: string }) {
-  const videos = await getVideos(id);
+  const response = await fetch(`${API_URL}/${id}/videos`);
+  const videos = await response.json();
+
   return (
     <section className="grid grid-cols-2 gap-4 mt-8 md:grid-cols-4">
       {videos.map((video) => (
