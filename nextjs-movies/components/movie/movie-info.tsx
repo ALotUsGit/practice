@@ -1,4 +1,4 @@
-import { getDetail } from "../../app/(movies)/[id]/layout";
+import { getDetail } from "../hooks/get-detail";
 
 export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getDetail(id);
