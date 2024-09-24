@@ -1,5 +1,4 @@
 import "./global.css";
-import Navigation from "../components/navigation";
 import Link from "next/link";
 
 export const metadata = {
@@ -24,7 +23,6 @@ export default function RootLayout({
         >
           A_LOTUS^MOVIE
         </Link>
-        {/* <Navigation /> */}
 
         <main className="flex-auto py-4 px-6 xl:px-12">{children}</main>
 

@@ -1,7 +1,7 @@
 const page = () => {
   return (
-    <section>
-      <h1>자유게시판</h1>
+    <section className="max-w-screen-lg mx-auto px-4">
+      <h1 className="text-xl">자유게시판</h1>
     </section>
   );
 };

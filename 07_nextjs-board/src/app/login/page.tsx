@@ -53,7 +53,7 @@ const page = () => {
           className="flex flex-col gap-4 py-12 px-8 bg-[#ffffff82] border border-white rounded-xl"
           onSubmit={checkInput}
         >
-          <h1 className="mb-4 text-2xl font-bold text-center">ALOTUS</h1>
+          <h1 className="mb-4 text-2xl font-bold text-center">PLACE MATE</h1>
 
           <label htmlFor="userEmail" className="flex flex-col gap-2">
             <span>E-mail</span>

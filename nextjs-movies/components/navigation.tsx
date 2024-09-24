@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default async function Navigation({ id }: { id: string }) {
+export default function Navigation({ id }: { id: string }) {
   const path = usePathname();
 
   return (
