@@ -1,4 +1,4 @@
-프론트엔드 개발자로 성장하기 위해 공부 중입니다.
+깃 활용 및 JS, TS, 프레임워크 등을 공부하기 위한 Directory입니다.
 
 ## [Javascript]
   1. Todo List ([https://alotusgit.github.io/practice/01_todolist/](https://alotusgit.github.io/practice/01_todolist/))  
